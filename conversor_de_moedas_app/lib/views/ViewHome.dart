@@ -1,6 +1,8 @@
  
 
+import 'package:conversor_de_moedas_app/utils/DropDown.dart';
 import 'package:flutter/material.dart';
+ 
 
 class ViewHome extends StatefulWidget {
   const ViewHome({ Key? key }) : super(key: key);
@@ -10,6 +12,13 @@ class ViewHome extends StatefulWidget {
 }
 
 class _ViewHomeState extends State<ViewHome> {
+
+
+
+  String valorDB = "";
+  List listaItens = [
+    "Real" , "Dolar", "Bitcoin"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,17 +40,28 @@ class _ViewHomeState extends State<ViewHome> {
                   Row(
                     children: [
 
-                      Expanded(child:
-                       DropdownButton( items: [
+                       Expanded(
+                         flex: 1,
+                         child: 
+                         //Text("Teste"),
+                        // DropDown(),
+                        DropdownButton(
+                          items: [
                         DropdownMenuItem(child: Text("Real"),),
                         
-                      ],
-                       onTap: (){},
-                      )
-                      
-                      ),
+
+                          ]
+
+                        ),
+                       ),
+
+                       Container(
+                         width: 50,
+                       ),
+
 
                       Expanded(
+                        flex: 2,
                           child: TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder() ,
