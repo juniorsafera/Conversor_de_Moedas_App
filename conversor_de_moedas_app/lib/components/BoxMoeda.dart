@@ -37,16 +37,13 @@ class BoxMoeda extends StatelessWidget {
                   ); 
                 }).toList(),
 
-         onChanged: (   value) {
-               
-               
-
-                            },
-
-                            
-                                    //    value: valor,
-                                           
-               
+                        onChanged: (   value) {
+                         setState(() {
+                           
+                        });
+                              },   
+                                              
+                                          
                                          ),
                                        ),
                                       ),
