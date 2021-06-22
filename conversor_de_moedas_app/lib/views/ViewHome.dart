@@ -37,10 +37,12 @@ class _ViewHomeState extends State<ViewHome> {
                    ),
 
                    SizedBox(height: 60,),
-
+                     
                     BoxMoeda(),
                     SizedBox(height: 20,),
                     BoxMoeda(),
+                     
+                        
         
                   // Widget de espaçamentos
                    SizedBox(

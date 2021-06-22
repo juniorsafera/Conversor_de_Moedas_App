@@ -1,52 +1,54 @@
 import 'package:flutter/material.dart';
 
-class BoxMoeda extends StatelessWidget {
+
+class BoxMoeda extends StatefulWidget {
   const BoxMoeda({ Key? key }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    var _valores = ['Real', 'Dolar', 'Euro', 'Bitcoin'];
-    
+  _BoxMoedaState createState() => _BoxMoedaState();
+}
 
+class _BoxMoedaState extends State<BoxMoeda> {
+  String dropdownValue = 'Real';
+   
 
-
-      
-     
-        return Row(
-    
+   @override
+   Widget build(BuildContext context) {
+     return     Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
               
                     children: [
 
                        Expanded(
                          flex: 1,
                          child: 
-                         
-                        SizedBox(
-                          height: 64,
-                          
-                          child: 
-                          
-                          DropdownButton <String>(
-                            
-                           underline: Container(height: 1, color: Colors.amber,),
-                            items : _valores.map((String dropDownStringItem) {
 
-                    return DropdownMenuItem<String>(
-                        value : dropDownStringItem,
-                        child : Text(dropDownStringItem),
-                  ); 
-                }).toList(),
-
-                        onChanged: (   value) {
-                         setState(() {
-                           
-                        });
-                              },   
-                                              
-                                          
-                                         ),
+                         SizedBox(
+                           height: 56,
+                           child: DropdownButton<String>(
+                                value: dropdownValue,  
+                                isExpanded: true,                              
+                                underline: Container(
+                                  height: 1,
+                                  color: Colors.amber,
+                                ),
+                                onChanged: (String? newValue) {
+                                  setState(() {
+                                    dropdownValue = newValue!;
+                                  });
+                                },
+                                items: <String>['Real', 'Dolar', 'Euro', 'BitCoin']
+                                  .map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  })
+                                  .toList(),
+                              ),
+                         ),                       
                                        ),
-                                      ),
+                                       
                
                                       Container(
                                         width: 50,
@@ -75,7 +77,5 @@ class BoxMoeda extends StatelessWidget {
                
                                    ],
                                  );
-                 }
-               
-                 
+   }
 }
