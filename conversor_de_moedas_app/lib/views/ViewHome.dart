@@ -20,6 +20,10 @@ class _ViewHomeState extends State<ViewHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.teal[800],
+        title: Text("Conversor de Moedas"),
+      ),
       body:   SingleChildScrollView(
               child: Container(
             width: MediaQuery.of(context).size.width,
@@ -36,10 +40,10 @@ class _ViewHomeState extends State<ViewHome> {
                       Image.network("https://image.flaticon.com/icons/png/512/356/356806.png"),
                    ),
 
-                   SizedBox(height: 60,),
+                    SizedBox(height: 60,),
                      
                     BoxMoeda(),
-                    SizedBox(height: 20,),
+                    SizedBox(height: 20,),                   
                     BoxMoeda(),
                      
                         
@@ -49,15 +53,18 @@ class _ViewHomeState extends State<ViewHome> {
                      height: 50,
                    ),
 
-
-                    RaisedButton(
-                      color: Colors.amber,
-                      onPressed: (){
+  
+                     
+                      RaisedButton(
+                        color: Colors.amber,
                         
-                      },
-                      child: Text("CONVERTER"),
-                    ),
-
+                        onPressed: (){
+                          
+                        },
+                        child: Text("CONVERTER"),                     ),
+                     
+                    
+ 
                 ],
               ),
             ),

@@ -19,6 +19,8 @@ class _BoxMoedaState extends State<BoxMoeda> {
               
                     children: [
 
+                       
+
                        Expanded(
                          flex: 1,
                          child: 
