@@ -1,4 +1,5 @@
 import 'package:conversor_de_moedas_app/components/BoxMoeda.dart';
+import 'package:conversor_de_moedas_app/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
  
 
@@ -10,7 +11,15 @@ class ViewHome extends StatefulWidget {
 }
 
 class _ViewHomeState extends State<ViewHome> {
+  final TextEditingController toText = TextEditingController() ;
+  final TextEditingController fromText = TextEditingController() ;
+ 
 
+      HomeController? homeController;
+
+      ViewHome(){
+         homeController = HomeController(  toText: toText,  fromText: fromText);
+      }
 
 
   String valorDB = "";
