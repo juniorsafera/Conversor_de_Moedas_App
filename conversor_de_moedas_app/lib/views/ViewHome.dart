@@ -11,21 +11,26 @@ class ViewHome extends StatefulWidget {
 }
 
 class _ViewHomeState extends State<ViewHome> {
-  final TextEditingController toText = TextEditingController() ;
-  final TextEditingController fromText = TextEditingController() ;
+   
+       
+   final TextEditingController toText = TextEditingController();
+   final TextEditingController fromText = TextEditingController();
+
+   late HomeController homeController;
+
+    
+
+    
+/*
+ @override
+  void initState() {
+    super.initState();
+   homeController = HomeController(toText: toText, fromText: fromText);
+  }
  
+*/
 
-      HomeController? homeController;
-
-      ViewHome(){
-         homeController = HomeController(  toText: toText,  fromText: fromText);
-      }
-
-
-  String valorDB = "";
-  List listaItens = [
-    "Real" , "Dolar", "Bitcoin"
-  ];
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,9 +56,22 @@ class _ViewHomeState extends State<ViewHome> {
 
                     SizedBox(height: 60,),
                      
-                    BoxMoeda(),
+                    BoxMoeda(
+                      //itemSelecionado: homeController.toMoeda,
+                       controller: toText,
+                       onChanged: (model){
+                          homeController.toMoeda = model;
+                       },
+                       //items: homeController.moedas,
+                        
+                    ),
                     SizedBox(height: 20,),                   
-                    BoxMoeda(),
+                    BoxMoeda(
+                      controller: fromText,
+                       onChanged: (model){
+                          homeController.toMoeda = model;
+                       }
+                    ),
                      
                         
         
