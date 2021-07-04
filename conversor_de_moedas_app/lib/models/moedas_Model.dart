@@ -2,13 +2,18 @@
 
 class MoedasModel{
 
-      var nome;
-      var real;
-      var dolar;
-      var euro;
-      var bitcoin;
+      final String? nome;
+      final double real;
+      final double dolar;
+      final double euro;
+      final double bitcoin;
 
-  MoedasModel({this.nome , this.real , this.dolar , this.euro , this.bitcoin});
+  MoedasModel(
+    {  this.nome ,
+    required this.real , 
+    required this.dolar , 
+    required this.euro , 
+    required this.bitcoin});
 
   static List<MoedasModel> getMoedas(){
     return <MoedasModel>[

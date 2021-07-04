@@ -25,7 +25,7 @@ void convert(){
   double value = double.tryParse(text) ?? 1.0;
   double returnValue = 0;
 
-  if(fromMoeda!.nome == 'Real'){
+  if(fromMoeda?.nome == 'Real'){
     returnValue = value * toMoeda!.real;
   } else if(fromMoeda!.nome == 'Dolar'){
     returnValue = value * toMoeda!.dolar;
